@@ -14,7 +14,7 @@ int main(){
     enterArrayData(arr, ARRAY_SIZE);
 
     cout << "Array data: ";
-    outputArrayData(arr, ARRAY_SIZE)
+    outputArrayData(arr, ARRAY_SIZE);
 
     double total = sumArray(arr, ARRAY_SIZE);
     cout << "Sum: " << total << endl;
@@ -22,3 +22,19 @@ int main(){
     delete[] arr;
     return 0;
 }
+
+void enterArrayData(double* arr, int size){
+    cout << "Enter "<<size<<" double values"<<endl;
+    for (int i =0; i<size; ++i){
+        cout <<  "Enter number "<<(i+1)<<": ";
+        cin >> *(arr + i);
+    } 
+}
+
+void outputArrayData(double* arr, int size){
+    for (int i =0; i<size; ++i){
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+}
+
