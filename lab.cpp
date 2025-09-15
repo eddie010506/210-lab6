@@ -13,22 +13,23 @@ int main(){
 
     enterArrayData(arr, ARRAY_SIZE);
 
-    cout << "Array data: ";
+    cout << "Outputting array elements: ";
     outputArrayData(arr, ARRAY_SIZE);
 
     double total = sumArray(arr, ARRAY_SIZE);
-    cout << "Sum: " << total << endl;
+    cout << "Sum of values:  " << total << endl;
 
     delete[] arr;
     return 0;
 }
 
 void enterArrayData(double* arr, int size){
-    cout << "Enter "<<size<<" double values"<<endl;
+    cout << "Data entry for the array:"<<endl;
     for (int i =0; i<size; ++i){
-        cout <<  "Enter number "<<(i+1)<<": ";
+        cout <<  "    > Element #"<<i<<": ";
         cin >> *(arr + i);
-    } 
+    }
+    cout << "data entry complete." << endl;
 }
 
 void outputArrayData(double* arr, int size){
@@ -38,3 +39,10 @@ void outputArrayData(double* arr, int size){
     cout << endl;
 }
 
+double sumArray(double* arr, int size){
+    double sum = 0.0;
+    for (int i =0; i<size; ++i){
+        sum += *(arr +i);
+    }
+    return sum;
+}
